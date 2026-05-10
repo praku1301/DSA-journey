@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "DSA",
+      "type": "shell",
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "g++ \"${file}\" -o \"${fileDirname}\\out\" && \"${fileDirname}\\out\" < \"${fileDirname}\\input.txt\" > \"${fileDirname}\\output.txt\""
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Terminal wala normal",
+      "type": "shell",
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "g++ \"${file}\" -o \"${fileDirname}\\out\" && \"${fileDirname}\\out\""
+      ],
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}
