@@ -86,3 +86,51 @@ int main()
 
     return 0;
 }
+
+// optimal
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> twoSum(vector<int> &nums, int target)
+{
+
+    unordered_map<int, int> mpp;
+
+    int n = nums.size();
+
+    for (int i = 0; i < n; i++)
+    {
+
+        int num = nums[i];
+
+        int moreNeeded = target - num;
+
+        // check if complement already exists
+
+        if (mpp.find(moreNeeded) != mpp.end())
+        {
+
+            return {mpp[moreNeeded], i};
+        }
+
+        // store current number with index
+
+        mpp[num] = i;
+    }
+
+    return {-1, -1};
+}
+
+int main()
+{
+
+    vector<int> nums = {2, 6, 5, 8, 11};
+
+    int target = 14;
+
+    vector<int> ans = twoSum(nums, target);
+
+    cout << ans[0] << " " << ans[1];
+
+    return 0;
+}
