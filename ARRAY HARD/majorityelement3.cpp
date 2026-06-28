@@ -174,7 +174,6 @@ int main()
 }
 
 // optimal
-
 #include <iostream>
 #include <vector>
 #include <algorithm>
